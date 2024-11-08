@@ -1,32 +1,15 @@
-import Image from 'next/image';
-import styles from './page.module.css';
-import { Avatar, Box, Button, Card, Flex, Text } from '@radix-ui/themes';
+// import StatusLabel, { Status } from './components/status-label';
+import AddCompanyButton from '@/app/components/add-company-button';
 
 export default function Home() {
   return (
-    <Flex direction="column" gap="2">
-      <Text>Hello from Radix Themes</Text>
-      <Button>Let's go</Button>
-      <Box maxWidth="240px">
-        <Card>
-          <Flex gap="3" align="center">
-            <Avatar
-              size="3"
-              src="https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?&w=64&h=64&dpr=2&q=70&crop=focalpoint&fp-x=0.67&fp-y=0.5&fp-z=1.4&fit=crop"
-              radius="full"
-              fallback="T"
-            />
-            <Box>
-              <Text as="div" size="2" weight="bold">
-                Teodros Girmay
-              </Text>
-              <Text as="div" size="2" color="gray">
-                Engineering
-              </Text>
-            </Box>
-          </Flex>
-        </Card>
-      </Box>
-    </Flex>
+    <main>
+      <h1 className="text-xl">Home page </h1>
+      {/* <StatusLabel status={Status.Active}>Active</StatusLabel>
+      <StatusLabel status={Status.NotActive}>Not Active</StatusLabel>
+      <StatusLabel status={Status.Pending}>Pending</StatusLabel>
+      <StatusLabel status={Status.Suspended}>Suspended</StatusLabel> */}
+      <AddCompanyButton />
+    </main>
   );
 }
