@@ -1,15 +1,32 @@
-import React from 'react';
+'use client';
+import React, { useEffect } from 'react';
 import Header from '@/app/components/header';
-export interface PageProps {
-  params: { id: string };
-}
+import { notFound } from 'next/navigation';
 
-export function generateStaticParams() {
-  return [{ id: '1' }, { id: '2' }, { id: '3' }];
-}
+// type PageProps = {
+//   params: { id: string };
+// };
 
-export default async function Page({ params }: PageProps) {
-  const { id } = await params;
+// type Params = {
+//   id: string;
+// };
+
+// export function generateStaticParams() {
+//   return [{ id: '1' }, { id: '2' }, { id: '3' }];
+// }
+
+// export default async function Page({ params }: PageProps) {
+// export default function Page({ params }: PageProps) {
+export default function Page({ params }: { params: any }) {
+  useEffect(() => {
+    const id = Number.parseInt(params.id);
+    if (Number.isNaN(id)) {
+      notFound();
+    }
+  }, [params.id]);
+
+  // const { id } = await params;
+  const { id } = params;
   return (
     <>
       <Header>Company ({id})</Header>
