@@ -11,9 +11,9 @@ export const getSummarySales = () => {
   for (let i = 0; i < 6; i++) {
     items.push({
       companyId: i + 1,
-      companyTitle: 'Costco Wholesale',
-      sold: 459,
-      income: 600,
+      companyTitle: `Costco Wholesale br. #${i + 1}`,
+      sold: 459 - i,
+      income: 600 + i,
     });
   }
   return Promise.resolve(items);
