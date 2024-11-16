@@ -11,8 +11,6 @@ export default function MagicButton(props: ButtonProps) {
     }
   }, [count]);
 
-  console.log('count', count);
-
   return (
     <Button {...props} onClick={() => setCount(count + 1)}>
       Magic button
