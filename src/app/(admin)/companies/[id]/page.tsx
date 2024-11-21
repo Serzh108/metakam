@@ -1,18 +1,17 @@
 // 'use client';
 import React from 'react';
-import Header from '@/app/components/header';
+// import Header from '@/app/components/header';
 // import { notFound } from 'next/navigation';
 
-// type PageProps = {
-//   params: { id: string };
-// };
+type PageProps = {
+  params: Promise<{ id: string }>;
+};
 
 // export function generateStaticParams() {
 //   return [{ id: '1' }, { id: '2' }, { id: '3' }];
 // }
 
-// export default async function Page({ params }: PageProps) {
-export default function Page({ params }: { params: any }) {
+export default async function Page({ params }: PageProps) {
   // useEffect(() => {
   //   const id = Number.parseInt(params.id);
   //   if (Number.isNaN(id)) {
@@ -20,13 +19,11 @@ export default function Page({ params }: { params: any }) {
   //   }
   // }, [params.id]);
 
-  // const { id } = await params;
-  const { id } = params;
+  const { id } = await params;
 
   return (
-    <>
-      <Header>Company ({id})</Header>
-      <p>{new Date().toTimeString()}</p>
-    </>
+    <div className="py-6 px-10">
+      <p>{`Information about company (${id})`}</p>
+    </div>
   );
 }
