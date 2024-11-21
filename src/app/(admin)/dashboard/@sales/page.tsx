@@ -16,17 +16,17 @@ interface IData {
 export default async function Page() {
   // const data = await getSummarySales();
   const data: IData[] = await new Promise((res) => {
-    setTimeout(() => res(getSummarySales()), 4000);
+    setTimeout(() => res(getSummarySales()), 1500);
   });
 
   return (
     // <DashboardCard label="Sales details">
     <DashboardCard
       label={
-        <>
-          Sales details
+        <div className="flex justify-between">
+          <div>Sales details</div>
           <MagicButton />
-        </>
+        </div>
       }
     >
       <SummaryTable

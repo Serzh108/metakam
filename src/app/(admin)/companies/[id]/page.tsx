@@ -24,9 +24,8 @@ export default function Page({ params }: { params: any }) {
   const { id } = params;
 
   return (
-    <>
-      <Header>Company ({id})</Header>
-      <p>{new Date().toTimeString()}</p>
-    </>
+    <div className="py-6 px-10">
+      <p>{`Information about company (${params.id})`}</p>
+    </div>
   );
 }
