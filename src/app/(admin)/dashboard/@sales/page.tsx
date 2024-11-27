@@ -6,18 +6,18 @@ import SummaryTableCell from '@/app/components/summary-table-cell';
 import DashboardCard from '@/app/components/dashboard-card';
 import MagicButton from '@/app/components/magic-button';
 
-interface IData {
-  companyId: number;
-  companyTitle: string;
-  sold: number;
-  income: number;
-}
+// interface IData {
+//   companyId: number;
+//   companyTitle: string;
+//   sold: number;
+//   income: number;
+// }
 
 export default async function Page() {
-  // const data = await getSummarySales();
-  const data: IData[] = await new Promise((res) => {
-    setTimeout(() => res(getSummarySales()), 1500);
-  });
+  const data = await getSummarySales();
+  // const data: IData[] = await new Promise((res) => {
+  //   setTimeout(() => res(getSummarySales()), 1500);
+  // });
 
   return (
     // <DashboardCard label="Sales details">
