@@ -1,7 +1,16 @@
 import React from 'react';
 import Image from 'next/image';
-import { Promotion } from '@/lib/api';
+// import { Promotion } from '@/lib/api';
 
+type Promotion = {
+  id: string;
+  title: string;
+  description: string;
+  discount: number;
+  companyId: string;
+  companyTitle: string;
+  avatar?: string;
+};
 export interface PromotionProps {
   promotion: Promotion;
 }
